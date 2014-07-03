@@ -2,6 +2,7 @@
 layout: default
 title: my Blog
 ---
+Hello {{ 'now' | date: "%Y %h" }}
 <div class="posts index">
   {% for post in site.posts %}
   <div class="post">
