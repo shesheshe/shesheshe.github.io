@@ -2,14 +2,30 @@
 layout: default
 title: my Blog
 ---
-{% paginator.total_posts %}
 <div class="posts index">
   {% for post in paginator.posts %}
-	<br>
-    <a href="{{ post.url }}">123</a>
+  <div class="post">
+    <h1>
+      <a href="{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h1>
+
+    <span class="post-date">{{ post.date | date_to_string }}</span>
+
+    {{ post.content | split:"<!-- more -->" | first }}
+
+    <div style="align: right">
+      <br>
+      <a href="{{ post.url }}">
+        <span class="more">Read more <i class="fa fa-arrow-right"></i></span>
+      </a>
+    </div>
+
+  </div>
+  <hr style="clear: both;">
   {% endfor %}
 </div>
-<p>---</p>
 <!-- Pagination links -->
 <div class="pagination">
   {% if paginator.next_page %}
