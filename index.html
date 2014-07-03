@@ -4,12 +4,12 @@ title: my Blog
 ---
 {% paginator.total_posts %}
 <div class="posts index">
-  {% for post in site.posts %}
+  {% for post in paginator.posts %}
 	<br>
     <a href="{{ post.url }}">123</a>
   {% endfor %}
 </div>
-
+<p>---</p>
 <!-- Pagination links -->
 <div class="pagination">
   {% if paginator.next_page %}
