@@ -2,7 +2,9 @@
 layout: default
 title: my Blog
 ---
-
+<div>
+{{ paginator.total_pages }}
+</div>
 <!-- Pagination links -->
 <div class="pagination">
   {% if paginator.previous_page %}
