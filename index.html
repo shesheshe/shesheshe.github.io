@@ -11,18 +11,6 @@ title: my Blog
       </a>
     </h1>
 
-    <span class="post-date">{{ post.date | date_to_string }}</span>
-
-    {{ post.content | split:"<!-- more -->" | first }}
-
-    <div style="align: right">
-      <br>
-      <a href="{{ post.url }}">
-        <span class="more">Read more <i class="fa fa-arrow-right"></i></span>
-      </a>
-    </div>
-
   </div>
-  <hr style="clear: both;">
   {% endfor %}
 </div>
